@@ -17,8 +17,17 @@ namespace VivaApiProject.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCountries()
         {
-            var countries = await _countryService.GetAllCountriesAsync();
-            return Ok(countries);
+            try
+            {
+                var countries = await _countryService.GetAllCountriesAsync();
+                return Ok(countries);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error while fetching countries"+ex);
+                return StatusCode(500, ex);
+            }
+
         }
     }
 }

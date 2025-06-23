@@ -4,6 +4,6 @@ namespace VivaApiProject.Services
 {
     public interface ICountryService
     {
-        Task<List<Country>> GetAllCountriesAsync();
+        Task<List<CountryResponse>> GetAllCountriesAsync();
     }
 }

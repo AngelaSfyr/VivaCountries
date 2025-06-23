@@ -1,9 +1,14 @@
 @VivaApiProject_HostAddress = http://localhost:5168
 
-GET {{VivaApiProject_HostAddress}}/weatherforecast/
-Accept: application/json
-
 ###
 GET {{VivaApiProject_HostAddress}}/api/countries
 Accept: application/json
 
+
+###
+POST {{VivaApiProject_HostAddress}}/api/Numbers/second-largest
+Content-Type: application/json
+Accept: */*
+{
+  "requestArrayObj": [4, 8, 15, 16, 23, 42]
+}
